@@ -16,10 +16,11 @@ En este trabajo, se utilizan distintas arquitecturas basadas en NMF para separar
 
 <figure>
 	<div style="text-align:center">
-		<img src="imgs/NMF_proposed-Replaced.png" width="70%">
+		<img src="imgs/NMF_proposed-Replaced.PNG" width="70%">
     </div>
 	<figcaption align = "center"><b>Figura 1: Arquitectura de separación NMF propuesta.</b></figcaption>
 </figure>
+
 
 
 Para más detalle sobre las conclusiones de este trabajo, se recomienda revisar el capítulo 3 de la tesis "[*Design of a preprocessing system for sounds obtained from chest auscultation*](https://repositorio.uc.cl/handle/11534/60994)").
