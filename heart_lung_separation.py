@@ -62,8 +62,10 @@ def find_and_open_audio(db_folder):
     return _open_file(filename)
 
 
-def nmf_lung_heart_separation(signal_in, samplerate, samplerate_nmf,
-                              model_name, nmf_method='replace_segments',
+def nmf_lung_heart_separation(signal_in, samplerate, model_name,
+                              samplerate_nmf=11025,
+                              filter_parameters={'bool':False},
+                              nmf_method='replace_segments',
                               plot_segmentation=False,
                               plot_separation=False):
     '''Función que permite hacer un preprocesamiento de la señal
@@ -75,12 +77,12 @@ def nmf_lung_heart_separation(signal_in, samplerate, samplerate_nmf,
         Señal de entrada.
     samplerate : float
         Tasa de muestreo de la señal de entrada.
-    samplerate_nmf : float
-        Frecuencia de muestreo deseada para la separación de 
-        fuentes.
     model_name : str
         Nombre del modelo de la red en la dirección 
         "heart_sound_segmentation/models".
+    samplerate_nmf : float, optional
+        Frecuencia de muestreo deseada para la separación de 
+        fuentes. Por defecto es 11025 Hz.
     nmf_method : {'to_all', 'on_segments', 'masked_segments', 
                   'replace_segments'}, optional
         Método de descomposición NMF a aplicar en la separación
@@ -164,9 +166,8 @@ def nmf_lung_heart_separation(signal_in, samplerate, samplerate_nmf,
             nmf_process(audio_to, samplerate_nmf, hs_pos=y_out2, 
                         interval_list=interval_list, 
                         nmf_parameters=nmf_parameters,
-                        filter_parameters={'bool':True}, 
+                        filter_parameters=filter_parameters, 
                         nmf_method=nmf_method)
-    
     
     print('Separación de fuentes completada')
     
@@ -216,8 +217,9 @@ def nmf_lung_heart_separation(signal_in, samplerate, samplerate_nmf,
     return resp_signal, heart_signal
 
 
-def nmf_lung_heart_separation_params(signal_in, samplerate, samplerate_nmf,
-                                     *,model_name, lowpass_params, nmf_parameters, 
+def nmf_lung_heart_separation_params(signal_in, samplerate,*,model_name, 
+                                     lowpass_params, nmf_parameters, 
+                                     samplerate_nmf=11025,
                                      nmf_method='replace_segments',
                                      filter_parameters={'bool': False},
                                      plot_segmentation=False,
@@ -233,9 +235,6 @@ def nmf_lung_heart_separation_params(signal_in, samplerate, samplerate_nmf,
         Señal de entrada.
     samplerate : float
         Tasa de muestreo de la señal de entrada.
-    samplerate_nmf : float
-        Frecuencia de muestreo deseada para la separación de 
-        fuentes.
     model_name : str
         Nombre del modelo de la red en la dirección 
         "heart_sound_segmentation/models".
@@ -252,6 +251,9 @@ def nmf_lung_heart_separation_params(signal_in, samplerate, samplerate_nmf,
         'solver': 'mu', 'beta': 2, 'tol': 1e-4, 
         'max_iter': 500, 'alpha_nmf': 0, 'l1_ratio': 0, 
         'random_state': 0, 'dec_criteria': 'temp_criterion'}.
+    samplerate_nmf : float, optional
+        Frecuencia de muestreo deseada para la separación de 
+        fuentes. Por defecto es 11025 Hz.
     nmf_method : {'to_all', 'on_segments', 'masked_segments', 
                   'replace_segments'}, optional
         Método de descomposición NMF a aplicar en la separación
@@ -379,7 +381,6 @@ def nmf_lung_heart_separation_params(signal_in, samplerate, samplerate_nmf,
     return resp_signal, heart_signal
 
 
-
 # Módulo de testeo
 if __name__ == '__main__':
     # Definición de la función a testear
@@ -404,9 +405,42 @@ if __name__ == '__main__':
 
         # Obteniendo la señal 
         resp_signal, heart_signal = \
-            nmf_lung_heart_separation_params(audio, samplerate, samplerate_nmf=11025, 
+            nmf_lung_heart_separation_params(audio, samplerate, 
                                              model_name='definitive_segnet_based', 
                                              lowpass_params=lowpass_params, 
-                                             nmf_parameters=nmf_parameters)
-
+                                             nmf_parameters=nmf_parameters,
+                                             samplerate_nmf=11025)
         
+        # Creaciónde la figura        
+        fig, axs = plt.subplots(3, 1, figsize=(15,8), sharex=True)
+
+        # Aplicando downsampling
+        new_rate, audio_dwns = \
+                    downsampling_signal(audio, samplerate, 
+                                        freq_pass=11025//2-100, 
+                                        freq_stop=11025//2)
+        print('Nueva tasa de muestreo para plot:', new_rate)
+        
+        axs[0].plot(audio_dwns)
+        axs[0].set_ylabel('Señal\noriginal')
+        axs[0].set_xticks([])
+        axs[0].set_ylim([-1.3, 1.3])
+        axs[0].set_title('Señal original & componentes obtenidas')
+
+        axs[1].plot(resp_signal)
+        axs[1].set_xticks([])
+        axs[1].set_ylabel('Señales\nrespiratorias')
+        axs[1].set_ylim([-1.3, 1.3])
+
+        axs[2].plot(heart_signal)
+        axs[2].set_xlabel('Muestras')
+        axs[2].set_ylabel('Señales\ncardiacas')
+        axs[2].set_ylim([-1.3, 1.3])
+        
+        # Alineando los labels del eje y
+        fig.align_ylabels(axs[:])
+        
+        # Remover espacio horizontal entre plots
+        fig.subplots_adjust(hspace=0)
+        
+        plt.show()
