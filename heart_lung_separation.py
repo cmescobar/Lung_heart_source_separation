@@ -16,9 +16,6 @@ def find_and_open_audio(db_folder):
     ----------
     db_folder : str
         Carpeta de la base de datos.
-    true_value : bool, optional
-        Booleano que indica si es que se retorna la etiqueta original
-        del archivo de audio (en formato .mat). Por defecto es False.
         
     Returns
     -------

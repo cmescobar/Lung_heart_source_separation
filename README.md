@@ -23,6 +23,7 @@ En este trabajo, se utilizan distintas arquitecturas basadas en NMF para separar
 
 
 
+
 Para más detalle sobre las conclusiones de este trabajo, se recomienda revisar el capítulo 3 de la tesis "[*Design of a preprocessing system for sounds obtained from chest auscultation*](https://repositorio.uc.cl/handle/11534/60994)").
 
 ## 2. Base de datos
