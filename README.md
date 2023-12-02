@@ -21,7 +21,7 @@ In this work, different NMF-based architectures are used to separate the two sou
 	<figcaption align = "center"><b>Figure 1: Proposed NMF separation architecture.</b></figcaption>
 </figure>
 
-</br>For more details on the conclusions of this work, please refer to the paper "[*Source separation for single channel thoracic cardio-respiratory sounds applying Non-negative Matrix Factorization (NMF) using a focused strategy on heart sound positions*](https://spie.org/Publications/Proceedings/Paper/10.1117/12.2669781?SSO=1)", or chapter 3 of the thesis "[*Design of a preprocessing system for sounds obtained from chest auscultation*](https://repositorio.uc.cl/handle/11534/60994)").
+</br>For more details on the conclusions of this work, please refer to the paper "[*Source separation for single channel thoracic cardio-respiratory sounds applying Non-negative Matrix Factorization (NMF) using a focused strategy on heart sound positions*](https://spie.org/Publications/Proceedings/Paper/10.1117/12.2669781?SSO=1)", or chapter 3 of the thesis "[*Design of a preprocessing system for sounds obtained from chest auscultation*](https://repositorio.uc.cl/handle/11534/60994)".
 
 ## 2. Database
 
