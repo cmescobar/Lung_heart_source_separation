@@ -44,7 +44,7 @@ The folders and files that comprise this project are:
 * `samples_test`: Contains a small sample of the dataset presented in [section 2](#2-database).
 * `source_separation`: Contains the files with the main functions used for the different types of source separation by NMF proposed in this study. In general, these functions operate at backend level.
 * `ss_utils`: Contains auxiliary functions that allow the operation of the main separation functions.
-* `heart_lung_separation.py`: File that contains the functions that allows the use the NMF source separation. These functions are the ones implemented in `main.py` and in the script examples in the `jupyter_test` folder.
+* `heart_lung_separation.py`: File that contains the functions that allow the use of the NMF source separation. These functions are the ones implemented in `main.py` and in the script examples in the `jupyter_test` folder.
 * `heart_prediction.py`: File containing the functions to implement the segmentation of the heart sound using the semantic segmentation CNN.
 * `main.py`: File containing an execution example for the function that performs the separation of the cardiorespiratory sound into respiratory and heart sound.
 
