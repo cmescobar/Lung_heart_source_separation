@@ -25,11 +25,11 @@ In this work, different NMF-based architectures are used to separate the two sou
 
 ## 2. Database
 
-In this work, two databases were used. The first is a respiratory sounds database presented at [*International Conference on Biomedical Health Informatics*](https://bhichallenge.med.auth.gr/ICBHI_2017_Challenge) (ICBHI) at 2017. This dataset was created by two research teams in Greece and Portugal using different electronic stethoscopes and microphones. It contains 920 recordings of a total of 126 patients, varying between 10-90 seconds, sampled at different rates (44100, 10000 and 4000 Hz). This dataset is also available on [Kaggle](https://www.kaggle.com/vbookshelf/respiratory-sound-database).
+In this work, two databases were used. The first is a respiratory sounds database presented at [*International Conference on Biomedical Health Informatics*](https://bhichallenge.med.auth.gr/ICBHI_2017_Challenge) (ICBHI) in 2017. This dataset was created by two research teams in Greece and Portugal using different electronic stethoscopes and microphones. It contains 920 recordings of a total of 126 patients, varying between 10-90 seconds, sampled at different rates (44100, 10000 and 4000 Hz). This dataset is also available on [Kaggle](https://www.kaggle.com/vbookshelf/respiratory-sound-database).
 
 The second is a heart sound database presented in the challenge proposed [Bentley et al.](http://www.peterjbentley.com/heartchallenge/) during 2011, whose objective was the segmentation and classification of these sounds according to their corresponding diseases.
 
-From each databases, a set of 12 cardio-respiratory sounds was generated from the sum of heart and lung sounds, making sure both signals have the same energy. Given that the heart and lung sounds in the different databases do not have the same sampling rate in most cases, all signals will be resampled at 11025 Hz.
+From each database, a set of 12 cardio-respiratory sounds was generated from the sum of heart and lung sounds, making sure both signals have the same energy. Given that the heart and lung sounds in the different databases do not have the same sampling rate in most cases, all signals will be resampled at 11025 Hz.
 
 With this synthetic database of 12 cardio-respiratory sounds, the performance of source separation will be evaluated, since both the lung and the heart signal are previously known. Therefore, direct comparisons can be made between the obtained signals and the original signals.
 
