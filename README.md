@@ -41,7 +41,7 @@ The folders and files that comprise this project are:
 * `imgs`: Folder with images included in this `README`.
 * `jupyter_test`: Contains the `testing_notebook.ipynb` file that allows to perform experiments of the presented model on the files available in the `samples_test` folder.
 * `models`: Contains the trained Convolutional Neural Network (CNN) for the heart sound segmenation in `.h5` format.
-* `samples_test`: Contains a small sample of the dataset presented in [sección 2](#2-database).
+* `samples_test`: Contains a small sample of the dataset presented in [section 2](#2-database).
 * `source_separation`: Contains the files with the main functions used for the different types of source separation by NMF proposed in this study. In general, these functions operate at backend level.
 * `ss_utils`: Contains auxiliary functions that allow the operation of the main separation functions.
 * `heart_lung_separation.py`: File that contains the functions that allows the use the NMF source separation. These functions are the ones implemented in `main.py` and in the script examples in the `jupyter_test` folder.
