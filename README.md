@@ -12,7 +12,7 @@ Heart sounds are quasi-periodic signals caused by the flow of blood circulating 
 
 Since the heart and lung are located in close proximity to each other on the body, it is inevitable that the recorded heart and respiratory sounds interfere with each other in time and frequency. This separation is of great interest to specialists in both areas, cardiologists and pulmonologists, as it will enable more accurate diagnoses.
 
-In this work, different NMF-based architectures are used to separate the two sounds. However, the one that according to the study gives the best results is the presented in figure 1. 
+In this work, different NMF-based architectures are used to separate the two sounds. However, the one that according to the study gives the best results is the one presented in figure 1. 
 
 <figure>
 	<div style="text-align:center">
