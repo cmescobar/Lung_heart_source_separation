@@ -6,7 +6,7 @@ The development of this project was performed in the context of my Master of Eng
 
 ## 1. Theoretical background
 
-Lung sounds are produced by a turbulent flow of air within the respiratory tract during inhalation and exhalation processes, mainly in the bronchi and trachea. This flow propagates in the form of sound thorugh the lung tissues which can be heard over the chest wall. Auscultation of breath sounds can provide signs of excessive secretions or evidence of inflammation of the lungs, which may be related to diseasses such as asthma, tuberculosis, chronic obstructions, pneumonia and bronchiectasis. 
+Lung sounds are produced by a turbulent flow of air within the respiratory tract during inhalation and exhalation processes, mainly in the bronchi and trachea. This flow propagates in the form of sound through the lung tissues which can be heard over the chest wall. Auscultation of breath sounds can provide signs of excessive secretions or evidence of inflammation of the lungs, which may be related to diseases such as asthma, tuberculosis, chronic obstructions, pneumonia and bronchiectasis. 
 
 Heart sounds are quasi-periodic signals caused by the flow of blood circulating through the heart in conjunction with the movement of its own structure. Their principal sounds correspond to the first heart sound (S1) generated during the closing of the atrioventricular valves, in which the ventricles contract and allow blood to be pumped from the heart to the rest of the body through aorta and pulmonary arteries. The second heart sound (S2) occurs during closure of the sigmoid/semilunar valves in which the ventricles relax and allow blood to flow from the atria.
 
